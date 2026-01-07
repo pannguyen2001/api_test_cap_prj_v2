@@ -5,6 +5,8 @@ autopep8
 # test
 requests
 pytest
+pytest_html
+pytest-xdist
 
 # log
 loguru

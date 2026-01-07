@@ -5,9 +5,9 @@ from helpers import logger, logger_wrapper, load_data, replace_string_by_dict_va
 from configs.constants import FILE_TYPE, FILETYPE, BASE_URL
 
 @logger_wrapper
-def test_case_setup(
+def setup_test_case(
     file_path: str = "",
-    file_type: FILE_TYPE = FILETYPE.TEXT.value,
+    file_type: str = FILETYPE.EXCEL.name.lower(),
     pre_data: Dict = None
     ) -> None:
     test_case_info: Dict = load_data(file_path, file_type)

@@ -59,6 +59,11 @@ class Client:
     def set_header(self, header: Dict = None) -> None:
         self.__header = header
 
+    def assign_url(self, url: str = "") -> str:
+        if not url.startswith("https://") or not url.startswith("http://"):
+            return f"{self.__base_url}{url}"
+        return url
+
     def get(
         self,
         url: str = "",
@@ -66,9 +71,9 @@ class Client:
         *args,
         **kwargs
         ) -> Response:
-
+        url: str = self.assign_url(url)
         return get(
-            f"{self.__base_url}{url}",
+            url,
             headers=self.__header,
             json=json,
             *args,
@@ -82,9 +87,9 @@ class Client:
         *args,
         **kwargs
         ) -> Response:
-
+        url: str = self.assign_url(url)
         return post(
-            f"{self.__base_url}{url}",
+            url,
             headers=self.__header,
             json=json,
             *args,
@@ -98,9 +103,9 @@ class Client:
         *args,
         **kwargs
         ) -> Response:
-
+        url: str = self.assign_url(url)
         return put(
-            f"{self.__base_url}{url}",
+            url,
             headers=self.__header,
             json=json,
             *args,
@@ -114,9 +119,9 @@ class Client:
         *args,
         **kwargs
         ) -> Response:
-
+        url: str = self.assign_url(url)
         return patch(
-            f"{self.__base_url}{url}",
+            url,
             headers=self.__header,
             json=json,
             *args,
@@ -129,9 +134,9 @@ class Client:
         *args,
         **kwargs
         ) -> Response:
-
+        url: str = self.assign_url(url)
         return delete(
-            f"{self.__base_url}{url}",
+            url,
             headers=self.__header,
             json=json,
             *args,

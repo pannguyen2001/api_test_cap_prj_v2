@@ -6,7 +6,7 @@
 - Status: Not complete.
 
 ## I. Aim
-- Testing API for capstone project, for learning.
+- Testing API for capstone project, for learning pytest.
 
 ## II. Technology and packages
 - Python: 3.11.10
