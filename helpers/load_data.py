@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from typing import Dict, Any, List
 from .logger import logger
+from.logger_wrapper import logger_wrapper
 from configs.constants import FILETYPE
 
 FILE_TYPE = list(map(lambda c: c.value, FILETYPE))
@@ -21,9 +22,10 @@ def load_csv(file_path, *args, **kwargs) -> List:
 def load_excel(file_path, *args, **kwargs) -> List:
         return pd.read_excel(file_path, engine="calamine", *args, **kwargs).to_dict(orient="records")
 
+@logger_wrapper
 def load_data(
     file_path: str = "",
-    data_type: FILE_TYPE = "excel",
+    data_type: str = "excel",
     *args,
     **kwargs
     ) -> Any:

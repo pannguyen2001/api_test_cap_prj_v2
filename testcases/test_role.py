@@ -3,7 +3,7 @@ from typing import List
 from helpers.load_data import load_data
 from helpers.run_case import run_case
 
-role_test_cases: List = load_data("/home/user/apitestcapprj/data/test_cases/role_test_cases.xlsx")
+role_test_cases: List = load_data("./data/test_cases/role_test_cases.xlsx")
 role_test_cases = [i for i in role_test_cases if i["status"] == "Done"]
 
 @pytest.mark.role

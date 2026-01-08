@@ -2,10 +2,11 @@ from functools import wraps
 from typing import Callable, Any
 import time
 from .logger import logger
+from .logger_wrapper import logger_wrapper
 
 def time_execution_wrapper(func: Callable[..., Any]) -> Callable[..., Any]:
     @wraps(func)
-    @logger.catch
+    @logger_wrapper
     def wrap(*args, **kwargs):
         start_time = time.perf_counter()
         try:

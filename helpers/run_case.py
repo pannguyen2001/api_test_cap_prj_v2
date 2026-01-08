@@ -32,8 +32,6 @@ passed_message: Dict = {
 def assert_error_response(
     row: Union[pd.DataFrame, pd.Series] = None,
     status_code: int = 200,
-    expected_status_code: int = 200,
-    value: int = 200,
     res_message: str = ""
     ) -> bool:
     if status_code >= 400:
@@ -45,12 +43,10 @@ def assert_error_response(
         return False
     return True
 
-
 @logger_wrapper
 def assert_status_code(
     row: Union[pd.DataFrame, pd.Series] = None,
     status_code: int = 200,
-    expected_status_code: int = 200,
     value: int = 200,
     res_message: str = ""
     ) -> bool:
@@ -184,11 +180,11 @@ def run_case(
 
         for key, value in row["expected_result"].items():
             logger.info(f"Key: {key}, Value: {value}")
-            assert_error_response_result: bool = assert_error_response(row, status_code, value, value, res_message)
+            assert_error_response_result: bool = assert_error_response(row, status_code, res_message)
             if not assert_error_response_result:
                 continue
             if key == "status_code":
-                assert_status_code_result: bool = assert_status_code(row, status_code, value, value, res_message)
+                assert_status_code_result: bool = assert_status_code(row, status_code, value, res_message)
                 if not assert_status_code_result:
                     continue
             else:

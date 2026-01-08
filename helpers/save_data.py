@@ -4,6 +4,7 @@ import pandas as pd
 from typing import Dict, Any, Optional
 from configs.constants import FILETYPE
 from .logger import logger
+from .logger_wrapper import logger_wrapper
 
 FILE_TYPE = list(map(lambda c: c.value, FILETYPE))
 
@@ -25,8 +26,14 @@ def save_to_excel_file(file_path: str = "", data: Dict | pd.DataFrame | pd.Serie
     data.to_excel(file_path, *args, **kwargs)
     return True
 
-
-def save_data(file_path: str = "", data: Any =  None, file_type: FILE_TYPE = "csv", *args, **kwargs) -> None:
+@logger_wrapper
+def save_data(
+    file_path: str = "",
+    data: Any =  None,
+    file_type: str = "csv",
+    *args,
+    **kwargs
+    ) -> None:
     save_data_to_file_funct_mapping: Dict = {
         "json": save_to_json_file,
         "text": save_to_text_file,
