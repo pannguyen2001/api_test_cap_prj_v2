@@ -13,7 +13,9 @@
         }
     },
     "need_clear": [
+        "API predata - student account 01",
         "API predata - student account 01 - edited",
-        "API csv - student account 01"
+        "API csv - student account 01",
+        "API csv - student account 02"
     ]
 }

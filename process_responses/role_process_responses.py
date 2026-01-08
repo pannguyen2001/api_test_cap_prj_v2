@@ -3,7 +3,8 @@ from apis import RoleAPI
 from common import Client
 from requests import Response
 from typing import List, Dict, Optional
-from helpers import logger_wrapper, logger, validate_response
+from helpers import logger_wrapper, logger
+from helpers.validate_response import validate_response
 
 class RoleProcessResponse:
     def __init__(self, client: Client = Client()) -> None:

@@ -3,7 +3,7 @@ from functools import wraps
 from .logger import logger
 
 def retry(
-    times: int = 3,
+    times: int = 1,
     delay: int = 5,
     exceptions=(Exception,)
     ):

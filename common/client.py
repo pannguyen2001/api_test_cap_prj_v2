@@ -4,7 +4,8 @@ from typing import Dict, Literal
 from configs.constants import BASE_URL
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util import Retry
-from helpers import retry, validate_response, logger, time_execution_wrapper
+from helpers import retry, logger
+from helpers.validate_response import validate_response
 
 ROLE_TYPE = Literal["admin", "student", "teacher"]
 
@@ -144,7 +145,6 @@ class Client:
             )
 
     @retry(3)
-    @time_execution_wrapper
     def login(self):
         logger.info(f"Login with role: {self.__role}, email: {self.__email} and password: {self.__password}.")
         request_body: Dict = {

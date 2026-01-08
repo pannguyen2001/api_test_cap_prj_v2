@@ -66,3 +66,5 @@ class FILETYPE(Enum):
     EXCEL = "xlsx"
 
 FILE_TYPE = list(map(lambda c: c.value, FILETYPE))
+
+

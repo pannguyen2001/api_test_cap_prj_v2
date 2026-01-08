@@ -3,7 +3,11 @@ from apis import AccountAPI
 from common import Client
 from requests import Response
 from typing import List, Dict, Optional
-from helpers import logger_wrapper, logger, validate_response, time_execution_wrapper
+from helpers.logger_wrapper import logger_wrapper
+from helpers.logger import logger
+from helpers.validate_response import validate_response
+from helpers.time_execution_wrapper import time_execution_wrapper
+
 
 class AccountResponse:
     def __init__(self, client: Client = Client()) -> None:
@@ -42,10 +46,10 @@ class AccountResponse:
 
         for account in current_account_list:
             if account["email"] == request_body["email"]:
-                logger.warning(f"Account '{request_body['email']}' already exists.")
+                logger.warning(f"Account with email: '{request_body['email']}' already exists.")
                 return account
-            elif account["full_name"] == request_body["full_name"]:
-                logger.warning(f"Account '{request_body['full_name']}' already exists.")
+            if account["full_name"] == request_body["full_name"]:
+                logger.warning(f"Account with full_name: '{request_body['full_name']}' already exists.")
                 return account
 
         create_account_res: Response = self.__AccountAPI.create_account(request_body)
@@ -57,7 +61,6 @@ class AccountResponse:
         return create_account_res
 
     @logger_wrapper
-    @time_execution_wrapper
     def edit_account(self, account_id: str = "", request_body: Dict = None) -> Dict:
         res: Response = self.__AccountAPI.edit_account(account_id, request_body)
         res = validate_response(self.edit_account.__name__, res)

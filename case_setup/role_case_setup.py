@@ -1,10 +1,12 @@
 import json
+import pytest
 from typing import List, Dict
 from helpers import logger, logger_wrapper, replace_data_by_setup_values
-from common.common_setup import admin, role_predata_info, ROLE
+from common.common_setup import role_predata_info, ROLE
 
+@pytest.fixture(scope="session")
 @logger_wrapper
-def role_case_setup() -> Dict:
+def role_case_setup(admin, student, teacher) -> Dict:
     predata_request_body_template: Dict = role_predata_info["predata"]
     need_clear_data_info: List = role_predata_info["need_clear"]
     pre_data: Dict = {}
