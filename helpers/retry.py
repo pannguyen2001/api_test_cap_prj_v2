@@ -1,6 +1,7 @@
 import time
 from functools import wraps
 from .logger import logger
+from .logger_wrapper import logger_wrapper
 
 def retry(
     times: int = 1,
@@ -8,7 +9,7 @@ def retry(
     exceptions=(Exception,)
     ):
     def decorator(function):
-        @logger.catch
+        @logger_wrapper
         @wraps(function)
         def wrapper(*args, **kwargs):
             for attempt in range(1, times + 1):

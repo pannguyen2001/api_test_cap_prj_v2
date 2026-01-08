@@ -26,7 +26,7 @@ python -m venv .venv
 ```
 2. Activate venv
 ```
-source .venv/bin/activate
+source .venv/bin/activate or .venv/Scripts/Activate.ps1
 ```
 3. Check python version
 ```
@@ -49,7 +49,12 @@ TEST_CASE_FILE_PATH = <your_real_path>/data/test_cases/account_test_cases.xlsx
 ```
 7. Run project
 ```
-python main.py
+# if just run:
+python main.py or pytest -m <mark> or pytest testcases/<test_file_name>.py
+# if want to run with report, run with commands below step by step:
+pytest --alluredir=allure-results --clean-alluredir
+allure generate allure-results -o allure-report --clean
+allure serve allure-results
 ```
 ## V. Folder structure
 - apis: function to call apis.

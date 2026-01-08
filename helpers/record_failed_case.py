@@ -1,15 +1,22 @@
+import datetime
 import json
+import os
 import pandas as pd
 from typing import Union
-from configs.constants import datetime_today, today
+from configs.constants import today, DATETIMEFORMAT, VN_TIME_ZONE
 from .logger import logger
 from .logger_wrapper import logger_wrapper
 
 @logger_wrapper
 def record_fail_case(fail_case_data: Union[pd.DataFrame, pd.Series] = None) -> None:
-    import os
-    file_path: str = f"reports/{today}/fail_case_{datetime_today}.txt"
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    current_datetime: str = datetime.datetime.now().astimezone(VN_TIME_ZONE).strftime(DATETIMEFORMAT.DATETIME_V2.value)
+    file_path: str = f"./reports/{today}/fail_case_{current_datetime}.txt"
+    directory = os.path.dirname(file_path)
+    # Create all necessary parent directories if they don't exist
+    if not os.path.exists(directory):
+        os.makedirs(directory, exist_ok=True)
+        print(f"Directories created: {directory}")
+
     fail_case_data = fail_case_data[
         [
             "case_no",

@@ -19,6 +19,7 @@ TEST_CASE_FILE_PATH = os.getenv("TEST_CASE_FILE_PATH")
 class DATETIMEFORMAT(Enum):
     DATETIME = "%Y-%m-%d %H:%M:%S"
     DATE = "%Y-%m-%d"
+    DATETIME_V2 = "%Y-%m-%d_%H-%M-%S"
 
 VN_TIME_ZONE = pytz.timezone("Asia/Ho_Chi_Minh")
 today = datetime.datetime.now().astimezone(VN_TIME_ZONE).strftime(DATETIMEFORMAT.DATE.value)

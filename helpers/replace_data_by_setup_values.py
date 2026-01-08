@@ -3,9 +3,10 @@ import json
 import re
 from typing import Dict
 from .logger import logger
+from .logger_wrapper import logger_wrapper
 from .random_string import random_string
 
-@logger.catch
+@logger_wrapper
 def replace_random_string(data: str = "") -> str:
     if "random_string" in data:
         matches = re.findall(r"\{random_string\((.*?)\)\}", data)
@@ -19,7 +20,7 @@ def replace_random_string(data: str = "") -> str:
         data = data.replace(replace_str, random_str)
     return data
 
-@logger.catch
+@logger_wrapper
 def replace_datetime_format(data: str = "") -> str:
     # {datetime(%Y-%m-%d %H:%M:%S,0)} -> ["%Y-%m-%d %H:%M:%S", "7"] -> 2025-12-25 07:00:00 (local datetime)
     if "datetime" in data:
@@ -34,7 +35,7 @@ def replace_datetime_format(data: str = "") -> str:
         data = data.replace(f"{{datetime({matches[0]})}}", datetime_str)
     return data
 
-@logger.catch
+@logger_wrapper
 def replace_data_by_setup_values(data: str = "", setup_data: Dict = None) -> Dict:
     if not data:
         raise Exception(f"[{replace_data_by_setup_values.__name__}] error: input data can not be None")

@@ -7,7 +7,7 @@ requests
 pytest
 pytest_html
 pytest-xdist
-
+allure-pytest
 # log
 loguru
 
