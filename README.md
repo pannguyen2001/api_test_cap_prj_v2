@@ -1,4 +1,4 @@
-# API test for capstone project - version 2: apply pytest and allure report
+# API test for capstone project
 - Created by: Pham Anh Nhat
 - Created on: 2026-01-07
 - Last modified on: 2026-01-08
