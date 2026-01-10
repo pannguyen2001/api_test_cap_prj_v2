@@ -1,4 +1,3 @@
-import os
 import pytest
 from helpers.logger import logger
 
