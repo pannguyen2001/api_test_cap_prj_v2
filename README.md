@@ -44,7 +44,6 @@ pip list
 LOG_FOLDER = <your_real_path>/logs
 REPORT_FOLDER = <your_real_path>/reports
 BASE_URL = <app_url>
-TEST_CASE_FILE_PATH = <your_real_path>/data/test_cases/account_test_cases.xlsx
 ```
 7. Run project
 ```
