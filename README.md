@@ -70,5 +70,3 @@ allure serve allure-results
     1. Github: https://github.com/pannguyen2001/api_test_cap_prj_v2
 - UI testing using selenium:
     1. Github: (upcoming)
-- Data validation:
-    1. Github: https://github.com/pannguyen2001/data-da-ds-de
