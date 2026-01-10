@@ -4,7 +4,7 @@
 - Status: In progress.
 
 ## I. Overview
-- This repository contains a custom API Testing tool built with Python to automate the validation of backend services. The tool is designed to verify request-response cycles, status codes, and data payloads to ensure that system functionality aligns with technical design requirements. By leveraging Python and Pandas, the tool provides a structured approach to functional and data-driven API testing.
+This repository contains a custom API Testing tool built with Python to automate the validation of backend services. The tool is designed to verify request-response cycles, status codes, and data payloads to ensure that system functionality aligns with technical design requirements. By leveraging Python and Pandas, the tool provides a structured approach to functional and data-driven API testing.
 
 ## II. Key Features
 - Request/Response Validation: Automatically verifies status codes, headers, and JSON body content.
