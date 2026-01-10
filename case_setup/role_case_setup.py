@@ -2,7 +2,8 @@ import json
 import pytest
 from typing import List, Dict
 from helpers import logger, logger_wrapper, replace_data_by_setup_values
-from common.common_setup import role_predata_info, ROLE
+from configs.constants import ROLE
+from common.common_setup import role_predata_info
 
 @pytest.fixture(scope="session")
 @logger_wrapper
