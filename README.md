@@ -1,23 +1,22 @@
-# API test for capstone project
+# API testing for capstone project
 - Created by: Pham Anh Nhat
-- Created on: 2026-01-07
-- Last modified on: 2026-01-08
 - Version: 1.0.0
-- Status: Not complete.
+- Status: In progress.
 
-## I. Aim
-- Testing API for capstone project, for learning pytest.
+## I. Overview
+- This repository contains a custom API Testing tool built with Python to automate the validation of backend services. The tool is designed to verify request-response cycles, status codes, and data payloads to ensure that system functionality aligns with technical design requirements. By leveraging Python and Pandas, the tool provides a structured approach to functional and data-driven API testing.
 
-## II. Technology and packages
+## II. Key Features
+- Request/Response Validation: Automatically verifies status codes, headers, and JSON body content.
+- Data-Driven Testing: Uses Pandas to inject multiple test datasets into API requests for comprehensive coverage.
+- Modular Architecture: Designed with reusable scripts to simplify the maintenance of test suites.
+- Functional Testing: Validates business logic through rigorous endpoint testing.
+
+## III. Technology and packages
 - Python: 3.11.10
 - Pytest: 9.0.2
 - Requests: 2.32.5
 - Loguru: 0.7.3
-
-## III. Capstone project infomation:
-- Github: <datn-fe-pannguyen>
-- Website: https://datn-fe-sooty.vercel.app/
-- Manual test: 
 
 ## IV. Guideline
 1. Install virtual env
@@ -57,7 +56,7 @@ allure generate allure-results -o allure-report --clean
 allure serve allure-results
 ```
 
-## V. All projects in Capstone Project ecosystem
+## V. Related projects.
 - Capstone project (cloned, using for testting purpose):
     1. Github FE: https://github.com/pannguyen2001/datn-fe
     2. Github BE: https://github.com/pannguyen2001/datn-be
@@ -65,8 +64,6 @@ allure serve allure-results
 - Generate data tool (auto generate correct data, to save to db, reduce time prepare data):
     1. Github: https://github.com/pannguyen2001/gen_data_tool
 - API testing:
-    1. Github: https://github.com/pannguyen2001/api_test_cap_prj/
-- API testing v2 (combine pytest and allure report):
     1. Github: https://github.com/pannguyen2001/api_test_cap_prj_v2
 - UI testing using selenium:
     1. Github: (upcoming)
