@@ -34,6 +34,6 @@ teacher_info: dict = client_info["teacher"]
 logger.success(f"Load client info successfully:\n{json.dumps(client_info, indent=4)}")
 
 # ========== User login ==========
-admin: User = User(ROLE.ADMIN.value, **admin_info)
-student: User = User(ROLE.STUDENT.value, **student_info)
-teacher: User = User(ROLE.TEACHER.value, **teacher_info)
+# admin: User = User(ROLE.ADMIN.value, **admin_info)
+# student: User = User(ROLE.STUDENT.value, **student_info)
+# teacher: User = User(ROLE.TEACHER.value, **teacher_info)

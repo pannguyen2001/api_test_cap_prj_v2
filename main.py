@@ -1,4 +1,3 @@
-import os
 import pytest
 from helpers.logger import logger
 
@@ -9,7 +8,7 @@ if __name__ == "__main__":
     pytest.main([
         test_case_path,
         "-m",
-        "account",
+        mark,
         # "--clean-alluredir"
     ])
     logger.success(f"{' End testing ':=^50}\n")

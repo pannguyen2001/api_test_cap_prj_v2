@@ -30,6 +30,8 @@ def setup_test_case(
 
     df_neccessary_case["expected_result"] = df_neccessary_case["expected_result"].map(lambda x: replace_data_by_setup_values(x, pre_data) if pd.notna(x) else None)
 
+    df_neccessary_case["actual_result"] = ""
+
     logger.success("Test case setup successfully.")
     logger.info(f"Test case info:\n{json.dumps(df_neccessary_case.to_dict(orient='records'), indent=4)}")
     return df_neccessary_case
