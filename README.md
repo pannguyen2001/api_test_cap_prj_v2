@@ -63,6 +63,8 @@ allure serve allure-results
 - Generate data tool (auto generate correct data, to save to db, reduce time prepare data):
     1. Github: https://github.com/pannguyen2001/gen_data_tool
 - API testing:
+    1. Github: https://github.com/pannguyen2001/api_test_cap_prj/
+- API testing v2 (combine pytest and allure report):
     1. Github: https://github.com/pannguyen2001/api_test_cap_prj_v2
 - UI testing using selenium:
     1. Github: (upcoming)

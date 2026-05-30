@@ -174,6 +174,9 @@ def run_case(
             res = user.client.delete(url=row["api"],json=row["request_body"])
 
         logger.info(f"Response:\n{res.status_code}, {res.text}")
+
+        row["actual_result"] = res.text
+
         status_code: int = res.status_code
         res_message: str = res.text if status_code >=400 else ""
         logger.info(f"Expected result: {row['expected_result']}")

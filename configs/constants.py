@@ -39,6 +39,17 @@ report_file_path = os.path.join(REPORT_FOLDER, report_file_name)
 report_file_path = Path(report_file_path)
 report_file_path.parent.mkdir(exist_ok=True, parents=True)
 
+# ========== Error file ==========
+current_datetime: str = datetime.datetime.now().astimezone(VN_TIME_ZONE).strftime(DATETIMEFORMAT.DATETIME_V2.value)
+FAILED_CASES_FOLDER: str = os.path.join(REPORT_FOLDER, "failed_cases")
+FAILED_CASES_FOLDER = Path(FAILED_CASES_FOLDER)
+FAILED_CASES_FOLDER.mkdir(exist_ok=True, parents=True)
+error_report_file_path: str = f"{FAILED_CASES_FOLDER}/fail_case_{current_datetime}.txt"
+with open(error_report_file_path, 'a') as file:
+    file.write(f"\n{'':=^50}\t FAILED CASE REPORT \t{'':=^50}\n")
+    file.write(f"Running time: {datetime_today}\n")
+    file.write(f"\n{'':=^50}\n")
+
 # ========== Enum class ===========
 class MODULETEST(Enum):
     ROLE = "role"
