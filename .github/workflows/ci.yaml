@@ -16,7 +16,8 @@ jobs:
       LOG_FOLDER: ./logs
       REPORT_FOLDER: ./reports
       TEST_CASE_FILE_PATH: ./data/test_cases/account_test_cases.xlsx
-      BASE_URL: ${{ vars.STAGING_BASE_URL || 'https://datn-be-steel.vercel.app' }}
+      BASE_URL: ${{ vars.STAGING_BASE_URL}}
+      USER_INFO: ${{ vars.USER_INFO}}
     steps:
       - uses: actions/checkout@v4
 
