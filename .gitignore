@@ -14,6 +14,6 @@ chatgpt_review_and_hint_implement_2026-05-29.md
 .vscode
 .idx
 .kilo
-.github
+.github/workflows/cd.yaml
 .dockerignore
 Dockerfile
