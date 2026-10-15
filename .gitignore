@@ -11,3 +11,9 @@ allure-report/*
 claude_review_and_hint_implement_2026-05-29.md
 chatgpt_review_and_hint_implement_2026-05-29.md
 .gitignore
+.vscode
+.idx
+.kilo
+.github
+.dockerignore
+Dockerfile
