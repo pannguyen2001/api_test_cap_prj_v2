@@ -8,7 +8,9 @@ from common.user import User
 from configs.constants import ROLE
 from case_setup.account_case_setup import account_case_setup
 from case_setup.role_case_setup import role_case_setup
+import dotenv
 
+dotenv.load_dotenv()
 
 logger.info(f"{' Load common info and setup ':=^50}")
 
@@ -29,8 +31,9 @@ logger.success(f"Load account predata successfully:\n{json.dumps(account_predata
 
 # =========== Load client info from USER_CONFIG_FILE_PATH ==========
 user_config_file_path: str = os.path.join(base_dir, "configs", "user_info.json")
-client_info: dict = load_data(user_config_file_path, "json")
-logger.success(f"Load client info successfully:\n{json.dumps(client_info, indent=4)}")
+client_info: dict = json.loads(os.getenv("USER_INFO"))
+# client_info: dict = load_data(user_config_file_path, "json")
+logger.success("Load client info successfully")
 admin_info = client_info["admin"]
 student_info = client_info["student"]
 teacher_info = client_info["teacher"]
